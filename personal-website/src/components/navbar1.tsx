@@ -1,5 +1,6 @@
 import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
-import JB from '../assets/JBLogoWhite.png'
+import JB from '../assets/jb_logo_black.png'
+
 
 import {
   Accordion,
@@ -40,16 +41,6 @@ interface Navbar1Props {
     title: string;
   };
   menu?: MenuItem[];
-  auth?: {
-    login: {
-      title: string;
-      url: string;
-    };
-    signup: {
-      title: string;
-      url: string;
-    };
-  };
 }
 
 const Navbar1 = ({
@@ -57,12 +48,12 @@ const Navbar1 = ({
     url: "https://www.shadcnblocks.com",
     src: JB,
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "",
   },
   menu = [
-    { title: "Home", url: "#" },
-    {
-      title: "Products",
+    { title: "Hjem", url: "#" },
+/*     {
+      title: "Om meg",
       url: "#",
       items: [
         {
@@ -91,50 +82,20 @@ const Navbar1 = ({
           url: "#",
         },
       ],
-    },
+    }, */
+
+
     {
-      title: "Resources",
-      url: "#",
-      items: [
-        {
-          title: "Help Center",
-          description: "Get all the answers you need right here",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Contact Us",
-          description: "We are here to help you with any questions you have",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Status",
-          description: "Check the current status of our services and APIs",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Terms of Service",
-          description: "Our terms and conditions for using our services",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Pricing",
+      title: "Om meg",
       url: "#",
     },
+
     {
-      title: "Blog",
+      title: "Prosjekter",
       url: "#",
     },
   ],
-  auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
-  },
+
 }: Navbar1Props) => {
   return (
     <section className="py-4">
@@ -157,14 +118,7 @@ const Navbar1 = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
-            </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
-          </div>
+
         </nav>
 
         {/* Mobile Menu */}
@@ -197,14 +151,6 @@ const Navbar1 = ({
                     {menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
 
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
-                    </Button>
-                    <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>
