@@ -1,4 +1,5 @@
 import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import JB from '../assets/JBLogoWhite.png'
 
 import {
   Accordion,
@@ -54,7 +55,7 @@ interface Navbar1Props {
 const Navbar1 = ({
   logo = {
     url: "https://www.shadcnblocks.com",
-    src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
+    src: JB,
     alt: "logo",
     title: "Shadcnblocks.com",
   },
