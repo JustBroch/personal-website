@@ -53,7 +53,7 @@ const Hero1 = ({
                 <ArrowUpRight className="ml-2 size-4" />
               </Badge>
             )}
-            <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
+          <h1 className="my-6 text-5xl font-bold text-pretty lg:text-7xl">
               {heading}
             </h1>
             <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
