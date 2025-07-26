@@ -44,13 +44,12 @@ interface Navbar1Props {
 
 const Navbar1 = ({
     logo = {
-        url: "https://www.shadcnblocks.com",
+        url: "/",
         src: JB,
         alt: "logo",
         title: "",
     },
     menu = [
-        { title: "Home", url: "/" },
         { title: "About", url: "/#about" },
         { title: "Projects", url: "/projects" },
         { title: "Experience", url: "/careers" },

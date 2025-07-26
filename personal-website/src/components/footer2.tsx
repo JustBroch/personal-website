@@ -34,29 +34,25 @@ const Footer2 = ({
     tagline = "Coffee?",
     menuItems = [
         {
-            title: "Navigation",
+            title: "",
             links: [
-                { text: "Home", url: "/" },
                 { text: "About", url: "/#about" },
                 { text: "Projects", url: "/projects" },
                 { text: "Experience", url: "/careers" },
             ],
         },
         {
-            title: "Contact",
-            links: [
-                { text: "Get in touch", url: "/contact" },
-                { text: "Email", url: "mailto:just1998@live.no" },
-            ],
+            title: "",
+            links: [{ text: "Get in touch", url: "/contact" }],
         },
         {
-            title: "Social",
+            title: "",
             links: [
                 {
                     text: "LinkedIn",
                     url: "https://www.linkedin.com/in/justbroch",
                 },
-                { text: "GitHub", url: "https://github.com/yourusername" },
+                { text: "GitHub", url: "https://github.com/JustBroch" },
             ],
         },
     ],
@@ -90,9 +86,11 @@ const Footer2 = ({
                         {/* Menu sections */}
                         {menuItems.map((section, sectionIdx) => (
                             <div key={sectionIdx}>
-                                <h3 className="mb-4 font-semibold text-foreground">
-                                    {section.title}
-                                </h3>
+                                {section.title && (
+                                    <h3 className="mb-4 font-semibold text-foreground">
+                                        {section.title}
+                                    </h3>
+                                )}
                                 <ul className="space-y-3">
                                     {section.links.map((link, linkIdx) => (
                                         <li key={linkIdx}>

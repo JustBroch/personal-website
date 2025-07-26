@@ -48,8 +48,8 @@ const Hero1 = ({
             <div className="container">
                 <div className="grid items-center gap-8 lg:grid-cols-2">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                        <FadeIn>
-                            {badge && (
+                        {badge && (
+                            <FadeIn>
                                 <Badge
                                     variant="outline"
                                     className="hover:scale-105 transition-transform duration-200"
@@ -57,8 +57,8 @@ const Hero1 = ({
                                     {badge}
                                     <ArrowUpRight className="ml-2 size-4" />
                                 </Badge>
-                            )}
-                        </FadeIn>
+                            </FadeIn>
+                        )}
 
                         <FadeIn delay={0.2}>
                             <h1 className="my-6 text-5xl font-bold text-pretty lg:text-7xl">

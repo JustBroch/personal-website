@@ -10,6 +10,11 @@ import {
     ExternalLink,
 } from "lucide-react";
 
+// Import company logos
+import NBIMLogo from "../assets/NBIM_logo.svg";
+import ForsvaretLogo from "../assets/forsvaret-norge-seeklogo.png";
+import EYDLogo from "../assets/EYD_logo.png";
+
 interface WorkExperience {
     title: string;
     company: string;
@@ -38,6 +43,7 @@ const experiences: WorkExperience[] = [
             "Machine Learning",
             "Trading Systems",
         ],
+        logo: NBIMLogo,
     },
     {
         title: "Business Developer",
@@ -50,6 +56,7 @@ const experiences: WorkExperience[] = [
             "Led business development initiatives and client relationship management.",
         ],
         technologies: ["HubSpot", "CRM", "Marketing", "Business Development"],
+        logo: EYDLogo,
     },
     {
         title: "Private (Grenadier)",
@@ -67,6 +74,7 @@ const experiences: WorkExperience[] = [
             "Strategic Planning",
             "Operations",
         ],
+        logo: ForsvaretLogo,
     },
 ];
 
@@ -102,12 +110,25 @@ const Careers4 = ({
                                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                                         <div className="flex-1">
                                             <div className="flex items-start gap-4">
-                                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                                                    {exp.company
-                                                        .split(" ")
-                                                        .map((word) => word[0])
-                                                        .join("")
-                                                        .slice(0, 2)}
+                                                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                                                    {exp.logo ? (
+                                                        <img
+                                                            src={exp.logo}
+                                                            alt={`${exp.company} logo`}
+                                                            className="w-12 h-12 object-contain"
+                                                        />
+                                                    ) : (
+                                                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                                            {exp.company
+                                                                .split(" ")
+                                                                .map(
+                                                                    (word) =>
+                                                                        word[0]
+                                                                )
+                                                                .join("")
+                                                                .slice(0, 2)}
+                                                        </div>
+                                                    )}
                                                 </div>
                                                 <div className="flex-1">
                                                     <CardTitle className="text-xl md:text-2xl mb-2 group-hover:text-blue-600 transition-colors duration-300">

@@ -37,7 +37,7 @@ const projectsData = [
         description:
             "A modern website built with React, TypeScript and shadcn/ui. Responsive design with focus on user experience.",
         technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-        github: "https://github.com/yourusername/personal-website",
+        github: "https://github.com/JustBroch/personal-website",
         live: "https://yourwebsite.com",
         featured: true,
     },
@@ -53,7 +53,7 @@ const projectsData = [
             "Docker",
             "Terraform",
         ],
-        github: "https://github.com/yourusername/chef-de-cuisine",
+        github: "https://github.com/JustBroch/chef-de-cuisine",
         featured: true,
     },
     {
@@ -66,7 +66,7 @@ const projectsData = [
             "Student Societies",
             "Competition",
         ],
-        github: "https://github.com/yourusername/vervmeg",
+        github: "https://github.com/JustBroch/vervmeg",
     },
 ];
 
@@ -83,14 +83,10 @@ const contactData = {
         },
         {
             platform: "GitHub",
-            url: "https://github.com/yourusername",
+            url: "https://github.com/JustBroch",
             icon: <Github className="w-4 h-4" />,
         },
     ],
-    cta: {
-        text: "Download CV",
-        url: "/cv.pdf",
-    },
 };
 
 function HomePage() {
@@ -100,7 +96,6 @@ function HomePage() {
             <main>
                 <section>
                     <Hero1
-                        badge="✨ Coffee?"
                         heading="Hi! I'm Just"
                         description="Enthusiast and computer science student. Based in Trondheim/Oslo, Norway. Always open for coffee and exciting projects."
                         buttons={{
