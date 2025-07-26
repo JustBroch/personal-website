@@ -54,7 +54,6 @@ const Navbar1 = ({
         { title: "About", url: "/#about" },
         { title: "Projects", url: "/projects" },
         { title: "Experience", url: "/careers" },
-        { title: "Contact", url: "/contact" },
     ],
 }: Navbar1Props) => {
     return (

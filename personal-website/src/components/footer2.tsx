@@ -1,114 +1,124 @@
-import JB from '../assets/JBLogoWhite.png'
-
+import JB from "../assets/jb_logo_black.png";
 
 interface MenuItem {
-  title: string;
-  links: {
-    text: string;
-    url: string;
-  }[];
+    title: string;
+    links: {
+        text: string;
+        url: string;
+    }[];
 }
 
 interface Footer2Props {
-  logo?: {
-    url: string;
-    src: string;
-    alt: string;
-    title: string;
-  };
-  tagline?: string;
-  menuItems?: MenuItem[];
-  copyright?: string;
-  bottomLinks?: {
-    text: string;
-    url: string;
-  }[];
+    logo?: {
+        url: string;
+        src: string;
+        alt: string;
+        title: string;
+    };
+    tagline?: string;
+    menuItems?: MenuItem[];
+    copyright?: string;
+    bottomLinks?: {
+        text: string;
+        url: string;
+    }[];
 }
 
 const Footer2 = ({
-  logo = {
-    src: "https://shadcnblocks.com/images/block/block-1.svg",
-    alt: "blocks for shadcn/ui",
-    title: "JustBroch.no",
-    url: "https://www.shadcnblocks.com",
-  },
-  tagline = "Kaffe?",
-  menuItems = [
-    {
-      title: "",
-      links: [
-        { text: "", url: "#" },
-        { text: "", url: "#" },
-      ],
+    logo = {
+        src: JB,
+        alt: "JB Logo",
+        title: "Just Broch",
+        url: "/",
     },
-    {
-      title: "",
-      links: [
-        { text: "About", url: "#" },
-        { text: "Contact", url: "#" },
-      ],
-    },
-    {
-      title: "",
-      links: [
-        { text: "Career", url: "#" },
-      ],
-    },
-    {
-      title: "",
-      links: [
-        { text: "LinkedIn", url: "#" },
-
-        { text: "Github", url: "#" },
-      ],
-    },
-  ],
-  copyright = "© 2025 Just Broch. All rights reserved.",
-
+    tagline = "Coffee?",
+    menuItems = [
+        {
+            title: "Navigation",
+            links: [
+                { text: "Home", url: "/" },
+                { text: "About", url: "/#about" },
+                { text: "Projects", url: "/projects" },
+                { text: "Experience", url: "/careers" },
+            ],
+        },
+        {
+            title: "Contact",
+            links: [
+                { text: "Get in touch", url: "/contact" },
+                { text: "Email", url: "mailto:just1998@live.no" },
+            ],
+        },
+        {
+            title: "Social",
+            links: [
+                {
+                    text: "LinkedIn",
+                    url: "https://www.linkedin.com/in/justbroch",
+                },
+                { text: "GitHub", url: "https://github.com/yourusername" },
+            ],
+        },
+    ],
+    copyright = "© 2025 Just Broch. All rights reserved.",
 }: Footer2Props) => {
-  return (
-    <section className="py-32">
-      <div className="container">
-        <footer>
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
-            <div className="col-span-2 mb-8 lg:mb-0">
-              <div className="flex items-center gap-2 lg:justify-start">
-                <a href="https://shadcnblocks.com">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    title={logo.title}
-                    className="h-10"
-                  />
-                </a>
-                <p className="text-xl font-semibold">{logo.title}</p>
-              </div>
-              <p className="mt-4 font-bold">{tagline}</p>
-            </div>
-            {menuItems.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="space-y-4 text-muted-foreground">
-                  {section.links.map((link, linkIdx) => (
-                    <li
-                      key={linkIdx}
-                      className="font-medium hover:text-primary"
-                    >
-                      <a href={link.url}>{link.text}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 text-sm font-medium text-muted-foreground md:flex-row md:items-center">
-            <p>{copyright}</p>
+    return (
+        <section className="py-32 bg-muted/30">
+            <div className="container">
+                <footer>
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        {/* Logo and tagline section */}
+                        <div className="md:col-span-2 lg:col-span-1">
+                            <div className="flex items-center gap-3 mb-4">
+                                <a href={logo.url} className="flex-shrink-0">
+                                    <img
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        title={logo.title}
+                                        className="h-8 w-auto"
+                                    />
+                                </a>
+                                <span className="text-xl font-semibold">
+                                    {logo.title}
+                                </span>
+                            </div>
+                            <p className="text-lg font-medium text-muted-foreground">
+                                {tagline}
+                            </p>
+                        </div>
 
-          </div>
-        </footer>
-      </div>
-    </section>
-  );
+                        {/* Menu sections */}
+                        {menuItems.map((section, sectionIdx) => (
+                            <div key={sectionIdx}>
+                                <h3 className="mb-4 font-semibold text-foreground">
+                                    {section.title}
+                                </h3>
+                                <ul className="space-y-3">
+                                    {section.links.map((link, linkIdx) => (
+                                        <li key={linkIdx}>
+                                            <a
+                                                href={link.url}
+                                                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                                            >
+                                                {link.text}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Copyright section */}
+                    <div className="mt-16 pt-8 border-t border-border">
+                        <p className="text-center text-sm text-muted-foreground">
+                            {copyright}
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    );
 };
 
 export { Footer2 };

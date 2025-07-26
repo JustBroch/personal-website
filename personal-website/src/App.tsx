@@ -8,7 +8,7 @@ import { Contact } from "./components/contact";
 import { Careers4 } from "./components/careers4";
 
 import Strand from "./assets/Strand.jpg";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const aboutData = {
         src: Strand,
         alt: "Photo of me at the beach",
     },
-    location: "Brisbane, Australia",
+    location: "Trondheim/Oslo, Norway",
     education: "NTNU - Computer Science",
     interests: ["Coffee", "Travel", "Photography", "Technology", "Innovation"],
     cta: {
@@ -42,43 +42,49 @@ const projectsData = [
         featured: true,
     },
     {
-        title: "Trading Bot",
+        title: "Chef de Cuisine",
         description:
-            "An algorithmic trading bot that uses machine learning to analyze market data and make automated trades.",
-        technologies: ["Python", "Machine Learning", "Pandas", "NumPy"],
-        github: "https://github.com/yourusername/trading-bot",
+            "Full-stack recipe app built with React, Flask, and PostgreSQL. Deployed to AWS using Docker and Terraform with focus on scalability and availability.",
+        technologies: [
+            "React",
+            "Flask",
+            "PostgreSQL",
+            "AWS",
+            "Docker",
+            "Terraform",
+        ],
+        github: "https://github.com/yourusername/chef-de-cuisine",
         featured: true,
     },
     {
-        title: "E-commerce Platform",
+        title: "VervMeg",
         description:
-            "A fullstack e-commerce solution with user management, payment integration and admin panel.",
-        technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-        github: "https://github.com/yourusername/ecommerce",
+            "Developed a React and TypeScript website showcasing student society positions. Pitched to jury in a final competition, focusing on scalability and financial viability.",
+        technologies: [
+            "React",
+            "TypeScript",
+            "Student Societies",
+            "Competition",
+        ],
+        github: "https://github.com/yourusername/vervmeg",
     },
 ];
 
 const contactData = {
     contact: {
-        email: "just@example.com",
-        location: "Brisbane, Australia",
-        phone: "+47 123 45 678",
+        email: "just1998@live.no",
+        location: "Trondheim/Oslo, Norway",
     },
     socials: [
         {
             platform: "LinkedIn",
-            url: "https://linkedin.com/in/yourusername",
+            url: "https://www.linkedin.com/in/justbroch",
             icon: <Linkedin className="w-4 h-4" />,
         },
         {
             platform: "GitHub",
             url: "https://github.com/yourusername",
             icon: <Github className="w-4 h-4" />,
-        },
-        {
-            platform: "Email",
-            url: "mailto:just@example.com",
-            icon: <Mail className="w-4 h-4" />,
         },
     ],
     cta: {
@@ -96,7 +102,7 @@ function HomePage() {
                     <Hero1
                         badge="✨ Coffee?"
                         heading="Hi! I'm Just"
-                        description="Enthusiast and computer science student. Currently on exchange in Brisbane, Australia. Always open for coffee and exciting projects."
+                        description="Enthusiast and computer science student. Based in Trondheim/Oslo, Norway. Always open for coffee and exciting projects."
                         buttons={{
                             primary: {
                                 text: "View projects",
